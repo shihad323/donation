@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Donation Portal</title>
+    
+    <style>
+body {
+    font-family: 'Arial', sans-serif;
+  /* background-image:url('assets/project bg 1.jpeg');*/
+     margin: 0; /* Remove default margins */
+      height: 100vh; /* Full viewport height */
+      width: 100%;
+      background-image: url("D:/project/donation-for-future/img/360_F_284509904_a8sE2D5kwEUdA04UpliKQiIeRvzE8VqZ.webp");
+      background-size: cover; /* Ensures the image covers the whole page */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Prevent tiling */
+      background-attachment: fixed;;
+
+}
+
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #28a745, #3a78b0);
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+/* Link Items */
+.nav-links li {
+    margin: 0 15px;
+}
+
+/* Link Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Underline Animation */
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f0f2f5;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    color: #f0f2f5; /* Change text color */
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1); /* Expand underline */
+    transform-origin: left;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background fade */
+    border-radius: 6px; /* Rounds the background fade */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+    color: #f0f2f5;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+
+
+
+
+
+
+
+.container {
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #3a7dbf, #f0f2f5);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 1px;
+    padding-top: 5px;
+    padding-bottom:5px;
+   margin-bottom: 20px;
+   
+    border: 2px solid #666562;
+    border-radius: 4px;
+    font-size: 16px;
+}
+input[type="number"]:focus {
+    border: 2px solid #28a745; /* Change border color on focus */
+    outline: none;              /* Remove default outline */
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #148592;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #104b57;
+}
+
+.message {
+    margin-top: 20px;
+    color: #28a745;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #333;
+}
+.cred
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:5px;
+    
+}
+.spn{
+    padding-top:10px;
+    font-weight: 700;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <!-- <li><a href="front1.html" id="homeLink">Home</a></li> -->
+            <li> <a href="front2.html"id="gallery">Gallery</a> </li>
+            <li><a href="index.html" id="ongoingActivitiesLink">Ongoing Activities</a></li>
+            <li><a href="aboutus.html" id="aboutUsLink">About Us</a></li>
+            <li><a href="front1.html" id="homeLink">Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 id="userPortalTitle">User Donation Portal</h1>
+        <form id="donationForm">
+            <label for="amount" id="amountLabel">Enter Credit Amount (৳):</label>
+            <input type="number" id="amount" name="amount" required placeholder="Enter amount in BDT" min="1">
+            <button type="submit">Add Credit</button>
+        </form>
+        <div class="message" id="message"></div>
+
+        <div class="cred">
+            <div class="titl">
+                <h2 id="totalCreditTitle">Total Credit:</h2>
+            </div>
+            <div class="spn">
+                <span id="totalCredit">৳0</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+
+        // Language Translations
+        const translations = {
+            en: {
+                userPortalTitle: "User Donation Portal",
+                amountLabel: "Enter Credit Amount (৳):",
+                totalCreditTitle: "Total Credit:",
+                homeLink: "Log Out",
+                aboutUsLink: "About Us",
+                userPortalLink: "User Portal",
+                ongoingActivitiesLink: "Ongoing Activities"
+            },
+            bn: {
+                userPortalTitle: "ব্যবহারকারী দান পোর্টাল",
+                amountLabel: "দান পরিমাণ লিখুন (৳):",
+                totalCreditTitle: "মোট ক্রেডিট:",
+                homeLink: "হোম",
+                aboutUsLink: "আমাদের সম্পর্কে",
+                userPortalLink: "ব্যবহারকারী পোর্টাল",
+                ongoingActivitiesLink: "চলমান কার্যক্রম"
+            }
+        };
+
+        // Load Language Function
+        const loadLanguage = (lang) => {
+            const translationsForLang = translations[lang];
+            document.getElementById('userPortalTitle').innerText = translationsForLang.userPortalTitle;
+            document.getElementById('amountLabel').innerText = translationsForLang.amountLabel;
+            document.getElementById('totalCreditTitle').innerText = translationsForLang.totalCreditTitle;
+            document.getElementById('homeLink').innerText = translationsForLang.homeLink;
+            document.getElementById('aboutUsLink').innerText = translationsForLang.aboutUsLink;
+            document.getElementById('userPortalLink').innerText = translationsForLang.userPortalLink;
+            document.getElementById('ongoingActivitiesLink').innerText = translationsForLang.ongoingActivitiesLink;
+        };
+
+
+        // Event listener for donation form
+
+        let totalCredit = 0;
+        document.getElementById('donationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const amount = parseFloat(document.getElementById('amount').value);
+            if (!isNaN(amount) && amount > 0) {
+                // Update total credit
+                totalCredit += amount;
+
+                // Save the updated total credit to localStorage
+                localStorage.setItem('totalCredit', totalCredit.toString());
+
+                // Update the displayed total credit
+                document.getElementById('totalCredit').innerText = `৳${totalCredit.toFixed(2)}`;
+
+                // Show the success message
+                document.getElementById('message').innerText = `You have added ৳${amount.toFixed(2)} for donation!`;
+
+                // Reset the form
+                document.getElementById('donationForm').reset();
+            } else {
+                // Show an error message if the input is not valid
+                document.getElementById('message').innerText = "Please enter a valid amount!";
+            }
+        });
+
+
+        const savedLanguage = localStorage.getItem('language') || 'en'; // Default to English
+        loadLanguage(savedLanguage);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+       /* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
+    line-height: 1.6;
+}
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #28a745, #3a78b0);
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+/* Link Items */
+.nav-links li {
+    margin: 0 15px;
+}
+
+/* Link Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Underline Animation */
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f0f2f5;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    color: #f0f2f5; /* Change text color */
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1); /* Expand underline */
+    transform-origin: left;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background fade */
+    border-radius: 6px; /* Rounds the background fade */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+    color: #f0f2f5;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+
+
+
+/* Content Box Styling */
+.content {
+    position: relative;
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: 3rem auto;
+    background: linear-gradient(45deg, #f7dc7cac, #318a53);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+/* Heading and Text Styling */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #131d38;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.4rem;
+    color: #191717;
+    line-height: 1.8;
+}
+
+
+.divider
+{
+    border:1.5px solid #ccc;
+}
+
+
+
+/* Menu Section */
+.menu {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.menutext {
+    font-size: 28px;
+    font-weight: bold;
+    color: #245f83;
+}
+
+/* Image Section - using CSS Grid */
+.imgsec.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Automatically adjusts the grid */
+    gap: 20px; /* Space between images */
+    padding: 20px;
+}
+
+/* Styling each individual image container */
+.forhoverimg {
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better image visibility */
+    transition: transform 0.3s ease-in-out;
+    height: 200px; /* Fixed height for image boxes, you can adjust this based on your design */
+}
+
+/* Grid Image Styling */
+.gridimg {
+    width: 100%; /* Ensures the image takes up 100% of the container's width */
+    height: 100%; /* Ensures the image takes up 100% of the container's height */
+    object-fit: cover; /* Ensures the image covers the container area without distortion */
+}
+
+/* Hover Effect */
+.forhoverimg:hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+/* Optional: Add a subtle fade on hover */
+.forhoverimg:hover .gridimg {
+    opacity: 0.8;
+}
+
+
+
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a id="forportal" href="userportal.html">User Portal</a></li>
+            <li><a id="foractivity" href="index.html">Ongoing Activities</a></li>
+            <li><a id="forus" href="aboutus.html">About Us</a></li>
+            <li><a id="forhome" href="front1.html">Log Out</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div class="content">
+        <h1 id="welcomeMessage">Welcome to Our Donation Pagee</h1>
+        <p id="mainContent">“Giving is an expression of our humanity, a way of saying, ‘I recognize that my life is
+            richer when I make a difference for others.’ — Oprah Winfrey</p>
+    </div>
+    <div class="divider">
+
+    </div>
+
+
+    <div class="menu">
+        <div class="menutext">
+            Photo Gallery
+        </div>
+
+        <div class="imgsec container ">
+            <div class="firstimg forhoverimg">
+                <img class="gridimg" src="assets/img1.webp" alt="">
+            </div>
+            <div class="secondimg forhoverimg">
+                <img class="gridimg" src="assets/img2.jpg" alt="">
+
+            </div>
+            <div class="thirdimg forhoverimg">
+                <img class="gridimg" src="assets/img3.webp" alt="">
+
+            </div>
+            <div class="fourthimg forhoverimg">
+                <img class="gridimg" src="assets/img4.webp" alt="">
+
+            </div>
+            <div class="fifthimg forhoverimg">
+                <img class="gridimg" src="assets/img5.jpeg" alt="">
+
+            </div>
+            <div class="sixthimg forhoverimg">
+                <img class="gridimg" src="assets/img6.webp" alt="">
+
+            </div>
+            <div class="seventhimg forhoverimg">
+                <img class="gridimg" src="assets/img7.jpg" alt="">
+
+            </div>
+            <div class="eightimg forhoverimg">
+                <img class="gridimg" src="assets/img8.jpeg" alt="">
+
+            </div>
+            <div class="ninethimg forhoverimg">
+                <img class="gridimg" src="assets/img9.jpg" alt="">
+
+            </div>
+            <div class="tenthimg forhoverimg">
+                <img class="gridimg" src="assets/img10.jpeg" alt="">
+
+            </div>
+            <div class="eleventhimg forhoverimg">
+                <img class="gridimg" src="assets/img11.jpg" alt="">
+
+            </div>
+            <div class="twelvethimg forhoverimg">
+                <img class="gridimg" src="assets/noakhali.png" alt="">
+
+            </div>
+            <div class="thirteenthimg forhoverimg">
+                <img class="gridimg" src="assets/feni.png" alt="">
+
+            </div>
+            <div class="fourteenthimg forhoverimg">
+                <img class="gridimg" src="assets/quota-protest.png" alt="">
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script>
+        const translations = {
+            en: {
+                welcomeMessage: "Welcome to Our Website",
+                mainContent: "Here you can easily donate your money to help people of your country.Just go to user portal ,add credits and donate in multiple projects as your wish.Every contribution, no matter how small, helps build a bridge of support for those in need—join us in making a difference.",
+                forus: "About Us",
+                forhome: "Log Out",
+                forportal: "User Portal",
+                foractivity: "Ongoing Activities"
+            },
+            bn: {
+                welcomeMessage: "আমাদের ওয়েবসাইটে স্বাগতম",
+                mainContent: "আপনি এখানে সহজেই আপনার অর্থ দান করতে পারেন আপনার দেশের মানুষের সাহায্যের জন্য। আপনাকে শুধুমাত্র ইউজার পোর্টালে যেতে হবে, ক্রেডিট যোগ করতে হবে এবং আপনার ইচ্ছেমতো বিভিন্ন প্রকল্পে দান করতে হবে। প্রতিটি দান, مهما ছোটই হোক না কেন, প্রয়োজনের মানুষের জন্য সমর্থনের একটি সেতু গড়ে তোলে—আমাদের সঙ্গে পরিবর্তন আনতে যোগ দিন।",
+                forus: "আমাদের সম্পর্কে",
+                forhome: "হোম",
+                forportal: "ব্যবহারকারী পোর্টাল",
+                foractivity: "চলমান কার্যক্রম"
+            }
+        };
+
+        const loadLanguage = (lang) => {
+            const translationsForLang = translations[lang];
+            document.getElementById('welcomeMessage').innerText = translationsForLang.welcomeMessage;
+            document.getElementById('mainContent').innerText = translationsForLang.mainContent;
+            document.getElementById('forus').innerText = translationsForLang.forus;
+            document.getElementById('forhome').innerText = translationsForLang.forhome;
+            document.getElementById('foractivity').innerText = translationsForLang.foractivity;
+            document.getElementById('forportal').innerText = translationsForLang.forportal;
+
+
+        };
+        const savedLanguage = localStorage.getItem('language') || 'en'; // Default to English
+        loadLanguage(savedLanguage);
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

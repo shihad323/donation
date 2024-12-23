@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Donation Page</title>
+</head>
+
+<style>
+
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+  /* background-image:url('assets/project bg 1.jpeg');*/
+     margin: 0; /* Remove default margins */
+      height: 100vh; /* Full viewport height */
+      background-image: url("D:/project/donation-for-future/img/donation1.jpg");
+      background-size: cover; /* Ensures the image covers the whole page */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Prevent tiling */
+      background-attachment: fixed;
+
+}
+.afternav
+{
+   display: flex;
+   flex-direction: row;
+   margin-bottom:20px;
+   padding-bottom: 30px;
+   
+ 
+}
+
+/* Container for main layout and centering */
+.total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+
+   
+}
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #28a745, #3a78b0);
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+/* Link Items */
+.nav-links li {
+    margin: 0 15px;
+}
+
+/* Link Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Underline Animation */
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f0f2f5;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    color: #f0f2f5; /* Change text color */
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1); /* Expand underline */
+    transform-origin: left;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background fade */
+    border-radius: 6px; /* Rounds the background fade */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+    color: #f0f2f5;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+
+
+
+
+
+/* Language Switcher Styles */
+.language-switcher {
+  
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.switch
+{
+    font-size: 20px;
+    font-weight: 600;
+}
+.switch img
+{
+    background-color: transparent;
+    width:15px;
+    height:auto;
+}
+
+/* Button Styling */
+.language-switcher button {
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background-image: linear-gradient(145deg, #6e7fef, #4b59d7); /* Gradient background */
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.language-switcher button:hover {
+    background-color: #4b59d7; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Focus Effect */
+.language-switcher button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(85, 154, 255, 0.8); /* Focus glow */
+}
+
+
+/* Content Container Styling */
+.content {
+    width: 1000px;
+    max-width: 100%; /* Responsive design */
+    height: 300px;
+    padding: 30px;
+    background: linear-gradient(135deg, #1a6aba, #f0f2f5);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Decorative Background Elements */
+.content::before, .content::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(74, 144, 226, 0.15); /* Light blue accent */
+    top: -50px;
+    left: -50px;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.content::after {
+    background: rgba(119, 72, 226, 0.15); /* Light purple accent */
+    top: auto;
+    bottom: -50px;
+    right: -50px;
+}
+
+.content:hover::before, .content:hover::after {
+    transform: scale(1.3);
+}
+
+
+/* Main Content Paragraph Styling */
+p {
+    color: #2d2b2b;
+    font-size: 1.2em;
+    opacity: 0.9;
+    position: relative;
+    animation: slideIn 1s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+
+
+
+
+
+/* Image Container Styling */
+/* Container Styling */
+.img-container {
+    
+    text-align: center;
+    margin-top:30px;
+   
+    padding:0 400px;
+    transition: transform 0.3s ease-in-out;
+    background-color: transparent; /* Ensure the container has no background */
+}
+
+/* Image Styling */
+.img-container img {
+    width: 200px; /* Slightly increased width for better visibility */
+    height: auto;
+    margin:0;
+    padding:0;
+ 
+    
+}
+.texts
+{
+    margin: 0;
+    
+}
+
+
+
+
+.text1 {
+    font-size: 70px;
+    font-weight: 600;
+    color:#e91010;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    border-radius:10px;
+    letter-spacing: 2px; /* Slight letter spacing for elegance */
+    text-shadow: 2px 2px 8px rgba(0.1, 0.1, 0.1, 0.2); /* Soft shadow to make text pop */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.text1:hover {
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    color: #944812; /* Darker shade on hover */
+}
+
+.text2 {
+    font-size: 30px;
+    font-family: 'Lucida Sans', sans-serif;
+    color: black;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+
+
+
+.login-container {
+    background: linear-gradient(135deg, #3a7dbf, #f0f2f5);
+
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.login-container:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+#loginTitle {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #6e8efb;
+    box-shadow: 0 4px 8px rgba(110, 142, 251, 0.3);
+    outline: none;
+}
+
+        /* Submit Button */
+        input[type="submit"] {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #5aa8c8, #176a84);
+            transform: translateY(-3px);
+        }
+        
+        input[type="submit"]:active {
+            transform: translateY(1px);
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .register-link a {
+            font-size: 16px;
+            color: #8c6436;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ffffff, #e0f7fa);
+            border: 1px solid #2193b0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(33, 147, 176, 0.2);
+        }
+        
+        .register-link a:hover {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: white;
+            box-shadow: 0 6px 15px rgba(33, 147, 176, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .register-link a:active {
+            transform: translateY(1px);
+        }
+        
+
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .img-container {
+        margin-top: 30px;
+    }
+    .total {
+        gap: 30px;
+    }
+    .afternav
+    {
+        flex-direction: column;
+       
+        
+    }
+    .img-container{
+        padding:0px;
+    }
+    
+}
+
+#errorMessage
+    {
+        color:red;
+        font-size: small;
+    }
+
+
+
+
+
+
+
+
+</style>
+
+<body>
+
+<div class="afternav">
+<div class="language-switcher">
+  <div class="switch">Switch language
+   <img src="c:\Users\USER\Downloads\arrow.png" alt="">
+
+  </div>
+   <div class="button">
+  <button id="lang-en">English</button>
+  <button id="lang-bn">বাংলা</button>
+</div>
+</div>
+
+<div class="img-container">
+  <div class="img">
+    <img src="c:\Users\USER\Downloads\file.png" alt=""> 
+  </div>
+  <div class="texts">
+    <div class="text1" id="donation">Donation</div>
+    <div class="text2" id="betterTomorrow">A better tomorrow fund...</div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="total">
+    
+
+   
+    <div class="content">
+      
+     <div class="cont"><p id="mainContent"></p>
+    </div>
+    </div>
+      
+
+    <div class="login-container">
+      <h2 id="loginTitle">Login</h2>
+      <form id="login" method="post">
+          <div class="form-group">
+              <label for="username" id="usernameLabel">Username</label>
+              <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+              <label for="password" id="passwordLabel">Password</label>
+              <input type="password" id="password" name="password" required>
+          </div>
+          <input type="submit" id="submitBtn" value="Login">
+          <div id="errorMessage"></div>
+      </form>
+      <div class="register-link">
+        <a id="registerLink" href="registration.html">Don't have an account? Register</a>
+    </div>
+    </div>
+
+    <!-- Language Switcher -->
+    
+  </div>
+
+  <script>
+
+
+
+   // Handle login
+   document.getElementById("login").addEventListener("submit", function (event) {
+            event.preventDefault();
+              // Prevent form from submitting
+
+            // Get input values
+            const loginUser = document.getElementById("username").value;
+            const loginPassword = document.getElementById("password").value;
+
+            // Get stored email and password from localStorage
+            const storedUser = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("userPassword");
+
+            // Check if no user is stored in localStorage
+            // if (!storedEmail || !storedPassword) {
+            //     alert("No user found. Please register first.");
+                
+            // }
+       
+        
+
+            // Check if the entered credentials match the stored credentials
+            if (loginUser === storedUser && loginPassword === storedPassword) {
+                alert("Login successful!");
+                // localStorage.setItem("username",null);
+                // localStorage.setItem("userPassword",null);
+
+                // Redirect to the user's dashboard or another page
+                window.location.href = "front2.html";
+            } else {
+                // Show error message if credentials do not match
+                document.getElementById("errorMessage").innerHTML = "Entered Wrong Username or Password";
+            }
+        });
+ 
+ 
+
+
+
+
+
+     
+    // Translation objects
+    const translations = {
+      en: {
+        mainContent: '“Giving is an expression of our humanity, a way of saying, ‘I recognize that my life is richer when I make a difference for others.’ Through giving, we come to realize that it’s not the amount we give, but the spirit in which we offer it, that truly matters.” — Oprah Winfrey',
+        donation: "Donation",
+        betterTomorrow: "A better tomorrow fund...",
+        login: "Login",
+        username: "Username",
+        password: "Password",
+        submitt: "Login",
+        register: "Don't have an account? Register"
+        
+      },
+      bn: {
+        mainContent: "আপনি এখানে সহজেই আপনার অর্থ দান করতে পারেন আপনার দেশের মানুষের সাহায্যের জন্য। আপনাকে শুধুমাত্র ইউজার পোর্টালে যেতে হবে, ক্রেডিট যোগ করতে হবে এবং আপনার ইচ্ছেমতো বিভিন্ন প্রকল্পে দান করতে হবে। প্রতিটি দান, ছোটই হোক না কেন, প্রয়োজনের মানুষের জন্য সমর্থনের একটি সেতু গড়ে তোলে—আমাদের সঙ্গে পরিবর্তন আনতে যোগ দিন।",
+        donation: "দান",
+        betterTomorrow: "একটি উন্নত ভবিষ্যতের জন্য তহবিল...",
+        login: "প্রবেশ করুন",
+        username: "ব্যবহারকারীর নাম",
+        password: "পাসওয়ার্ড",
+        submitt: "প্রবেশ করুন",
+        register: "আপনার কি অ্যাকাউন্ট নেই? নিবন্ধন করুন"
+        
+      }
+    };
+
+    // Function to load the language
+    const loadLanguage = (lang) => {
+      const translationsForLang = translations[lang];
+      document.getElementById('mainContent').innerText = translationsForLang.mainContent;
+      document.getElementById('donation').innerText = translationsForLang.donation;
+      document.getElementById('betterTomorrow').innerText = translationsForLang.betterTomorrow;
+      document.getElementById('loginTitle').innerText = translationsForLang.login;
+      document.getElementById('usernameLabel').innerText = translationsForLang.username;
+      document.getElementById('passwordLabel').innerText = translationsForLang.password;
+      document.getElementById('submitBtn').value= translationsForLang.submitt;
+
+      document.getElementById('registerLink').innerText = translationsForLang.register;
+
+      localStorage.setItem('language', lang);
+
+     
+    };
+
+    // Event listeners for language buttons
+    document.getElementById('lang-en').addEventListener('click', () => {
+      loadLanguage('en');
+    });
+
+    document.getElementById('lang-bn').addEventListener('click', () => {
+      loadLanguage('bn');
+    });
+    const savedLanguage = localStorage.getItem('language') || 'en'; // Default to English
+    loadLanguage(savedLanguage);
+
+
+    
+   
+
+
+  
+  </script>
+
+
+
+
+
+
+
+
+    
+  
+</body>
+</html>

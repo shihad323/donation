@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body Styling */
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0); /* Gradient Background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* Register Container */
+        .register-container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        /* Animation for Entry */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Header Styling */
+        .register-container h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        /* Form Group Styling */
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: #2193b0;
+            box-shadow: 0 4px 8px rgba(33, 147, 176, 0.2);
+            outline: none;
+        }
+        
+        
+        
+        /* Submit Button */
+        input[type="submit"] {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #5aa8c8, #176a84);
+            transform: translateY(-3px);
+        }
+        
+        input[type="submit"]:active {
+            transform: translateY(1px);
+        }
+        
+        .log {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: #094e40;
+}
+
+.log p {
+    margin: 0;
+}
+
+.log a {
+    font-size: 14px;
+    color: #2193b0;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.log a:hover {
+    color: #176585;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.log a:active {
+    color: #0d4c63;
+    transform: scale(0.95);
+}
+
+        
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .register-container {
+                padding: 20px;
+            }
+        
+            .register-container h2 {
+                font-size: 20px;
+            }
+        
+            input[type="submit"] {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+        </style>
+        
+</head>
+<body>
+
+
+
+    <div class="register-container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="enter your email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="enter your phone number" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="enter your password">
+            </div>
+            <input type="submit" value="Register">
+            <div class="log">
+                <p>Already have an account?<a href="front1.html">Log In</a></p>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Handle registration
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+            event.preventDefault();  // Prevent form from submitting
+
+            // Get input values
+            const user = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Store email and password in localStorage
+            localStorage.setItem("username", user);
+            localStorage.setItem("userPassword", password);
+
+            alert("Registration successful!");
+            // You could redirect to login page or clear the form here
+            window.location.href = "front1.html";
+        });
+    </script>
+    
+</body>
+</html>

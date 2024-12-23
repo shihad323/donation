@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define the CSS variables */
+        :root {
+            --custom-gray: rgb(249, 247, 243);
+            --green: rgb(180, 244, 97);
+            --ass: rgba(17, 17, 17, 0.05);
+        }
+
+    </style>
+    <title>Donate Bangladesh</title>
+</head>
+<body class="bg-white">
+    <nav class="sticky top-0 z-50 bg-gradient-to-r from-green-500 to-blue-600 shadow-md px-10 py-5">
+        <ul class="flex justify-around items-center list-none m-0 p-0">
+            <li>
+                <a href="front2.html" id="gallery" 
+                   class="text-white text-lg relative px-4 py-2 transition-all rounded-md 
+                          hover:bg-white/10 hover:rounded-lg hover:text-gray-200 
+                          active:bg-white/20 active:text-gray-200">
+                    Gallery
+                    <span class="absolute bottom-0 left-0 w-full h-[2px] bg-gray-100 scale-x-0 
+                                 origin-right transition-transform duration-300 hover:scale-x-100 hover:origin-left"></span>
+                </a>
+            </li>
+            <li>
+                <a href="userportal.html" id="userPortalLink" 
+                   class="text-white text-lg relative px-4 py-2 transition-all rounded-md 
+                          hover:bg-white/10 hover:rounded-lg hover:text-gray-200 
+                          active:bg-white/20 active:text-gray-200">
+                    User Portal
+                    <span class="absolute bottom-0 left-0 w-full h-[2px] bg-gray-100 scale-x-0 
+                                 origin-right transition-transform duration-300 hover:scale-x-100 hover:origin-left"></span>
+                </a>
+            </li>
+            <li>
+                <a href="aboutus.html" id="aboutUsLink" 
+                   class="text-white text-lg relative px-4 py-2 transition-all rounded-md 
+                          hover:bg-white/10 hover:rounded-lg hover:text-gray-200 
+                          active:bg-white/20 active:text-gray-200">
+                    About Us
+                    <span class="absolute bottom-0 left-0 w-full h-[2px] bg-gray-100 scale-x-0 
+                                 origin-right transition-transform duration-300 hover:scale-x-100 hover:origin-left"></span>
+                </a>
+            </li>
+            <li>
+                <a href="front1.html" id="homeLink" 
+                   class="text-white text-lg relative px-4 py-2 transition-all rounded-md 
+                          hover:bg-white/10 hover:rounded-lg hover:text-gray-200 
+                          active:bg-white/20 active:text-gray-200">
+                    Log Out
+                    <span class="absolute bottom-0 left-0 w-full h-[2px] bg-gray-100 scale-x-0 
+                                 origin-right transition-transform duration-300 hover:scale-x-100 hover:origin-left"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Top Navbar -->
+    <!-- Main Content Section -->
+    <div class="min-h-screen bg-white pt-32">
+        <div class="container mx-auto px-4">
+            <!-- Buttons Section -->
+            <div class="flex items-center justify-center py-3 gap-4">
+                <div class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-green-600 border-2 text-black p-5 border-radius">
+                    <p id="totalCreditDisplay text-2xl">Your Total Credit: 0.00</p>
+                </div>
+                <!-- <button id="donation" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-green-600 border-2 text-black">Donation</button> -->
+                <!-- <button id="history" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-white border-2 text-black">History</button> -->
+            </div>
+
+            <!-- Donation Section -->
+            <div id="donation-1">
+                <!-- Donation Card 1 (Noakhali) -->
+                <div class="border-[var(--ass)] rounded-xl border-2 container mx-auto flex flex-col lg:flex-row items-center p-4 mb-4">
+                    <div class="flex-1">
+                        <img src="assets/noakhali.png" alt="Noakhali" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="flex-1 p-4 flex-col">
+                        <button class="flex px-4 py-4 bg-gray-100 rounded-lg mb-4">
+                        
+                            <!-- <img src="assets/coin.png" alt="Coin Icon" class="mr-2 h-8 w-8"> -->
+                            <p class="text-black text-xl">
+                                <span> Target Amount: 20000</span> BDT
+                            </p>
+                        </button>
+                        <button class="flex px-4 py-4 bg-gray-100 rounded-lg mb-4">
+                            <p class="text-black text-xl">Raised Amount :</p>
+                            <!-- <img src="assets/coin.png" alt="Coin Icon" class="mr-2 h-8 w-8"> -->
+                            <p class="text-black text-xl">
+                                <span id="have-noakhali">5500</span> BDT
+                            </p>
+                        </button>
+                        <h2 class="text-2xl font-bold text-black mb-2">Donate for Flood at Noakhali, Bangladesh</h2>
+                        <p class="text-gray-700 mb-4">The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                        <input id="give-noakhali" class="bg-white p-5 border text-black border-[rgb(249,247,243)] focus:border-blue-500 w-full mb-4" type="number" placeholder="Write Donation Amount">
+                        <button id="donate-noakhali" class="btn btn-active bg-[var(--green)] text-black w-full text-2xl py-2 px-4">Donate Now</button>
+                    </div>
+                </div>
+
+                <!-- Donation Card 2 (Feni) -->
+                <div class="border-[var(--ass)] rounded-xl border-2 container mx-auto flex flex-col lg:flex-row items-center p-4 mb-4">
+                    <div class="flex-1">
+                        <img src="assets/feni.png" alt="Feni" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="flex-1 p-4">
+                        <button class="flex px-4 py-4 bg-gray-100 rounded-lg mb-4">
+                            <!-- <img src="assets/coin.png" alt="Coin Icon" class="mr-2 h-8 w-8"> -->
+                            <p class="text-black text-xl">
+                                <span> Target Amount: 20000</span> BDT
+                            </p>
+                        </button>
+                        <button class="flex px-4 py-4 bg-gray-100 rounded-lg mb-4">
+                            <!-- <img src="assets/coin.png" alt="Coin Icon" class="mr-2 h-8 w-8"> -->
+                             <p class="text-black text-xl">Raised Amount : </p>
+                            <p class="text-black text-xl">
+                                <span id="have-feni">5500</span> BDT
+                            </p>
+                        </button>
+                        <h2 class="text-2xl font-bold text-black mb-2">Donate for Flood Relief in Feni, Bangladesh</h2>
+                        <p class="text-gray-700 mb-4">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+                        <input id="give-feni" class="bg-white p-5 border text-black border-[rgb(249,247,243)] focus:border-blue-500 w-full mb-4" type="number" placeholder="Write Donation Amount">
+                        <button id="donate-feni" class="btn btn-active bg-[var(--green)] text-black w-full text-2xl py-2 px-4">Donate Now</button>
+                    </div>
+                </div>
+
+                <!-- Donation Card 3 (Quota Movement) -->
+                <div class="border-[var(--ass)] rounded-xl border-2 container mx-auto flex flex-col lg:flex-row items-center p-4 mb-4">
+                    <div class="flex-1">
+                        <img src="assets/quota-protest.png" alt="Quota Protest" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="flex-1 p-4 flex-col">
+                        <button class="flex px-4 py-4 bg-gray-100 rounded-lg mb-4">
+                            <!-- <img src="assets/coin.png" alt="Coin Icon" class="mr-2 h-8 w-8"> -->
+                            <p class="text-black text-xl">
+                                <span> Target Amount: 20000</span> BDT
+                            </p>
+                        </button>
+                        <button class="flex px-4 py-4 bg-gray-100 rounded-lg mb-4">
+                            <!-- <img src="assets/coin.png" alt="Coin Icon" class="mr-2 h-8 w-8"> -->
+                             <p class="text-black text-xl">Raised Amount : </p>
+                            <p class="text-black text-xl">
+                                <span id="have-quota">5500</span> BDT
+                            </p>
+                        </button>
+                        <h2 class="text-2xl font-bold text-black mb-2">Aid for Injured in the Quota Movement</h2>
+                        <p class="text-gray-700 mb-4">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+                        <input id="give-quota" class="bg-white p-5 border text-black border-[rgb(249,247,243)] focus:border-blue-500 w-full mb-4" type="number" placeholder="Write Donation Amount">
+                        <button id="donate-quota" class="btn btn-active bg-[var(--green)] text-black w-full text-2xl py-2 px-4">Donate Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Section (Hidden by default) -->
+            <div id="history-1" class="hidden">
+                <div id="container" class="text-black text-2xl container mx-auto">
+                    <!-- History Content Goes Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="java1.js"></script>
+</body>
+</html>

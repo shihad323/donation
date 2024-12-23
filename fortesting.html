@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="java1.js"></script>
+    <title>Donate Bangladesh</title>
+    <style>
+     
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #11998e, #318a53);
+        }
+
+       /* Main Total Credit Section Styling */
+       /* Parent Container Styling */
+    .totcoin {
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 1px; /* Add a 1px gap between the two child elements */
+    margin: 2rem auto; /* Center the container itself */
+    max-width: 350px; /* Optional: Set a maximum width for the container */
+    padding: 1rem;
+}
+
+
+
+
+
+
+
+/* Button Group Styling */
+.button-group .btn {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #1183d4, #8d9a67); /* Gradient Button */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Button Hover Effect */
+.button-group .btn:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #736834, #564545);
+}
+
+.totcoin1 {
+    display: flex;
+    
+    align-items: center;
+ 
+    background: linear-gradient(135deg, #1183d4, #8d9a67); /* Gradient Button */
+    border-radius: 12px;
+    padding: 1px 1px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width:310px;
+    max-height: 50px;
+    gap:5px;
+    
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.totcoin1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Coin Icon Styling */
+.coin img {
+    width: 20px; /* Adjusted the size for better visual appeal */
+    height: auto;
+    margin-right: -1px;
+    transition: transform 0.3s ease;
+    padding-bottom:-20px;
+}
+
+
+
+
+
+
+
+/* Total Credit Text */
+#totalCreditDisplay {
+    font-size:15px;
+    font-weight: bold;
+    color: #fefefb;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#totalCreditDisplay:hover {
+    color: #224b24; /* Slight color change on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .totcoin {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .coin img {
+        margin-right: 0;
+        margin-bottom: 10px; /* Add space below the coin for better alignment */
+    }
+
+    #totalCreditDisplay {
+        font-size: 20px; /* Slightly smaller font size for mobile */
+    }
+}
+
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(135deg, #28a745, #3a78b0);
+            padding: 10px 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Link Items */
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        /* Link Styling */
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 10px;
+            padding: 8px 15px;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+
+        /* Underline Animation */
+        .nav-links a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #f0f2f5;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover Effects */
+        .nav-links a:hover {
+            color: #f0f2f5;
+            /* Change text color */
+        }
+
+        .nav-links a:hover::before {
+            transform: scaleX(1);
+            /* Expand underline */
+            transform-origin: left;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Slight background fade */
+            border-radius: 6px;
+            /* Rounds the background fade */
+            padding: 7px 18px;
+            transition: background-color 0.3s ease, padding 0.3s ease;
+        }
+
+        /* Active Link Styling */
+        .nav-links a.active {
+            color: #f0f2f5;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 10px 20px;
+        }
+
+        .btn {
+            background-color: var(--green);
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+       /* Main Content Styling */
+.content {
+    margin-top: 10px;
+   
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+   
+    
+    
+}
+
+
+
+.button-group .btn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 10px;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-group .btn:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+/* Donation Card Styling */
+.donation-card {
+    display: flex;
+    
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e8f0e0, #faf4e8); /* Soft green to beige */
+    box-shadow: 0 8px 15px rgba(20, 18, 18, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 600px;
+     width: 100%;
+     height:auto;
+    gap:5px;
+}
+
+.donation-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image Inside Donation Card */
+.donation-card img {
+    border-radius: 12px;
+    max-width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+
+
+/* Donation Info Button Styling */
+.donation-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f0f0, #d4d4d4);
+    padding: 10px 15px;
+    border: 2px solid rgb(50, 50, 59);
+    border-radius: 12px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.donation-info:hover {
+    background: linear-gradient(135deg, #e0e0e0, #c4c4c4);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Coin Icon Styling Inside Donation Info */
+.donation-info img {
+    width: 25px;
+    height: auto;
+    margin-right: 12px;
+    transition: transform 0.3s ease;
+    
+}
+
+
+
+/* Donation Amount Text Styling */
+.donation-info p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.donation-info:hover p {
+    color: #222;
+}
+
+
+/* Title and Description Styling */
+.donation-card h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2a677d;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.donation-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Input Field for Donation Amount */
+#give-noakhali, #give-feni,#give-quota,#give-tree,#give-river{
+    width: 95%; /* Make both inputs the same width */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    margin: 10px 0 15px 0;
+    transition: border 0.3s ease;
+}
+
+#give-noakhali:focus, #give-feni:focus,#give-quota:focus,#give-tree:focus,#give-river:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Donate Now Button */
+.donate-btn {
+    background-color:#106957; 
+
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.donate-btn:hover {
+    background-color: #194e26;
+    transform: translateY(-3px);
+}
+
+.donate-btn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .donation-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .donation-card img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="front1.html" id="homeLink">Home</a></li>
+            <li> <a href="front2.html"id="gallery">Gallery</a> </li>
+            <li><a href="userportal.html" id="userPortalLink">User Portal</a></li>
+            <li><a href="fortesting.html" id="ongoingActivitiesLink">Ongoing Activities</a></li>
+            <li><a href="aboutus.html" id="aboutUsLink">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="totcoin">
+        <div class="totcoin1">
+        
+        <div class="tot">
+            <p id="totalCreditDisplay">Your Total Credit: ৳0.00</p>
+        </div>
+    </div>
+    <div class="totcoin2">
+        <div class="button-group">
+            <a href="history.html" id="history" class="btn">Donation<br>History</a>
+        </div>
+    </div>
+    </div>
+
+    <div class="content">
+       
+        <div id="donation-1">
+            <div class="donation-card">
+                <img src="assets/noakhali.png" alt="Noakhali">
+                <div class="card-content">
+                    <button class="donation-info">
+                        <img src="c:\Users\USER\Downloads\download.png" alt="Coin Icon">
+                        <p id="have-noakhali">0.00</p>
+                    </button>
+                    <h2>Donate for Flood at Noakhali, Bangladesh</h2>
+                    <p>The recent floods in Noakhali have caused significant damage...</p>
+                    <input id="give-noakhali" type="number" placeholder="Write Donation Amount">
+                    <button id="donate-noakhali" class="donate-btn">Donate Now</button>
+                </div>
+            </div>
+        </div>
+
+
+       <div id="donation-2">
+            <div class="donation-card">
+                <img src="assets/feni.png" alt="Feni">
+                <div class="card-content">
+                    <button class="donation-info">
+                        <img src="c:\Users\USER\Downloads\download.png" alt="Coin Icon">
+                        <p id="have-feni">0.00</p>
+                    </button>
+                    <h2>Donate for Flood at Feni, Bangladesh</h2>
+                    <p>The recent floods in Feni have devastated local communities, leading to severe disruption and loss. </p>
+                    <input id="give-feni" type="number" placeholder="Write Donation Amount">
+                    <button id="donate-feni" class="donate-btn">Donate Now</button>
+                </div>
+            </div>
+        </div>
+
+         
+       <div id="donation-3">
+        <div class="donation-card">
+            <img src="assets/quota-protest.png" alt="Feni">
+            <div class="card-content">
+                <button class="donation-info">
+                    <img src="c:\Users\USER\Downloads\download.png" alt="Coin Icon">
+                    <p id="have-quota">0.00</p>
+                </button>
+                <h2>Donate for Flood at Feni, Bangladesh</h2>
+                <p>The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+                <input id="give-quota" type="number" placeholder="Write Donation Amount">
+                <button id="donate-quota" class="donate-btn">Donate Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="donation-4">
+        <div class="donation-card">
+            <img src="assets/img5.jpeg" alt="Tree Plantation">
+            <div class="card-content">
+                <button class="donation-info">
+                    <img src="c:\Users\USER\Downloads\download.png" alt="Coin Icon">
+                    <p id="have-tree">0.00</p>
+                </button>
+                <h2>Donate for Tree Plantation at Dhaka City, Bangladesh</h2>
+                <p>tree plantation is vital for a sustainable environment, supporting both nature and human life.</p>
+                <input id="give-tree" type="number" placeholder="Write Donation Amount">
+                <button id="donate-tree" class="donate-btn">Donate Now</button>
+            </div>
+        </div>
+    </div>
+    <div id="donation-5">
+        <div class="donation-card">
+            <img src="assets/img7.jpg" alt="River Erosion">
+            <div class="card-content">
+                <button class="donation-info">
+                    <img src="c:\Users\USER\Downloads\download.png" alt="Coin Icon">
+                    <p id="have-river">0.00</p>
+                </button>
+                <h2>Donate for people effected by River Erosion from Northern part of BD</h2>
+                <p>
+                    Around 10,000 hectares land is eroded by river per year in Bangladesh (NWMP, 2001). The erosion prone zones of Bangladesh are Kurigram, Gaibandha, Jamalpur, Bogra, Sirajganj, Tangail, Pabna and Manikganj districts lie in the erosion prone area along Jamuna River.</p>
+                <input id="give-river" type="number" placeholder="Write Donation Amount">
+                <button id="donate-river" class="donate-btn">Donate Now</button>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <script src="java1.js"></script>
+</body>
+
+</html>

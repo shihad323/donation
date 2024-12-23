@@ -1,0 +1,175 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
+    line-height: 1.6;
+}
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #28a745, #3a78b0);
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+/* Link Items */
+.nav-links li {
+    margin: 0 15px;
+}
+
+/* Link Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Underline Animation */
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f0f2f5;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    color: #f0f2f5; /* Change text color */
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1); /* Expand underline */
+    transform-origin: left;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background fade */
+    border-radius: 6px; /* Rounds the background fade */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+    color: #f0f2f5;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+
+
+
+/* Content Box Styling */
+.content {
+    position: relative;
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: 3rem auto;
+    background: linear-gradient(45deg, #f7dc7cac, #318a53);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+/* Heading and Text Styling */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #131d38;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.4rem;
+    color: #191717;
+    line-height: 1.8;
+}
+
+
+.divider
+{
+    border:1.5px solid #ccc;
+}
+
+
+
+/* Menu Section */
+.menu {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.menutext {
+    font-size: 28px;
+    font-weight: bold;
+    color: #245f83;
+}
+
+/* Image Section - using CSS Grid */
+.imgsec.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Automatically adjusts the grid */
+    gap: 20px; /* Space between images */
+    padding: 20px;
+}
+
+/* Styling each individual image container */
+.forhoverimg {
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better image visibility */
+    transition: transform 0.3s ease-in-out;
+    height: 200px; /* Fixed height for image boxes, you can adjust this based on your design */
+}
+
+/* Grid Image Styling */
+.gridimg {
+    width: 100%; /* Ensures the image takes up 100% of the container's width */
+    height: 100%; /* Ensures the image takes up 100% of the container's height */
+    object-fit: cover; /* Ensures the image covers the container area without distortion */
+}
+
+/* Hover Effect */
+.forhoverimg:hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+/* Optional: Add a subtle fade on hover */
+.forhoverimg:hover .gridimg {
+    opacity: 0.8;
+}
+
+

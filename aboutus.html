@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+   
+
+    <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* background: linear-gradient(45deg, #11998e, #318a53); */
+}
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #28a745, #3a78b0);
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+/* Link Items */
+.nav-links li {
+    margin: 0 15px;
+}
+
+/* Link Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Underline Animation */
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f0f2f5;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    color: #f0f2f5; /* Change text color */
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1); /* Expand underline */
+    transform-origin: left;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background fade */
+    border-radius: 6px; /* Rounds the background fade */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+    color: #f0f2f5;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+
+.content {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #3a7dbf, #f0f2f5);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.member {
+    margin: 20px;
+    width: 250px;
+    text-align: center;
+    
+
+}
+
+.member1 img {
+    width:140px;
+    height:200px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    
+    
+}
+.member2 img {
+    width:160px;
+    height:200px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    
+    
+}
+
+h2 {
+    color: #088b4c;
+    margin: 10px 0;
+}
+
+p {
+    color: #555;
+}
+
+
+
+
+
+/* Footer Styling */
+.contact-us-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.contact-us-footer .container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+/* Contact Form Section */
+.contact-form {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff9f00;
+}
+
+.contact-form .form-row {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color:#5c8bd1;
+}
+
+.contact-form button {
+    background-color: #ff9f00;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ff7700;
+}
+
+/* Contact Info Section */
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff9f00;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color:#5c8bd1;
+    margin-bottom: 10px;
+}
+
+.contact-info .address,
+.contact-info .phone,
+.contact-info .email {
+    margin-bottom: 15px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ff9f00;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .contact-us-footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form,
+    .contact-info {
+        max-width: 100%;
+    }
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li> <a href="front2.html"id="gallery">Gallery</a> </li>
+            <li><a id="forportal" href="userportal.html">User Portal</a></li>
+            <li><a id="foractivity" href="index.html">Ongoing Activities</a></li>
+            <li><a id="forhome" href="front1.html">Log Out</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="team">
+            <div class="member1 member">
+                <h2 id="member1Name">Jiaul Asif</h2>
+                <p id="member1Desc"></p>
+            </div>
+            <div class="member2 member">
+                <h2 id="member2Name">Iftakhar Alam</h2>
+                <p id="member2Desc">Iftakhar is a backend developer who enjoys building robust and scalable
+                    applications. He has experience in various programming languages and frameworks.</p>
+            </div>
+            <div class="member3 member">
+                <h2 id="member3Name">Abdullah Al Munzir</h2>
+                <p id="member3Desc">Abdullah is a project manager with excellent organizational skills. He ensures that
+                    all team members are aligned and the projects are delivered on time.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Us Footer Section -->
+<footer class="contact-us-footer">
+    <div class="container">
+        <!-- Contact Form Section -->
+        <div class="contact-form">
+            <h3>Contact Us</h3>
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-row">
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <p class="address">
+                <strong>Address:</strong> 123 Main Street, City, Country
+            </p>
+            <p class="phone">
+                <strong>Phone:</strong> +1 (234) 567-890
+            </p>
+            <p class="email">
+                <strong>Email:</strong> contact@yourwebsite.com
+            </p>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    <script>
+        const translations = {
+            en: {
+                member1Name: "Jiaul Asif",
+                member1Desc: "One of the Project Member.Working mainly with FrontEnd to make this website very Whapped,delightful and user friendly",
+                member2Name: "Iftakhar Alam",
+                member2Desc: "One of the Project Member.Working mainly with the Backend to handle the user actions properly and Controlled connection with Database.",
+                member3Name: "Abdullah Al Munzir",
+                member3Desc: "One of the project Member.Working mainly with the Database and helping in collaboration for project buildup",
+                forus: "About Us",
+                forhome: "Home",
+                forportal: "User Portal",
+                foractivity: "Ongoing Activities"
+            },
+            bn: {
+                member1Name: "জিয়াউল আসিফ",
+                member1Desc: "প্রকল্পের একজন সদস্য। মূলত ফ্রন্টএন্ড নিয়ে কাজ করছেন যাতে এই ওয়েবসাইটটি খুব আকর্ষণীয়, আনন্দময় এবং ব্যবহারকারী-বান্ধব হয়।",
+                member2Name: "ইফতেখার আলম",
+                member2Desc: "প্রকল্পের একজন সদস্য। মূলত ব্যাকএন্ড নিয়ে কাজ করছেন যাতে ব্যবহারকারীর ক্রিয়াকলাপগুলি সঠিকভাবে পরিচালিত হয় এবং ডেটাবেসের সাথে নিয়ন্ত্রিত সংযোগ রক্ষা করা হয়।",
+                member3Name: "আবদুল্লাহ আল মুনজির",
+                member3Desc: "প্রকল্পের একজন সদস্য। মূলত ডাটাবেস এবং প্রকল্প নির্মাণের জন্য ধারণাগুলির সাথে কাজ করছেন।",
+                forus: "আমাদের সম্পর্কে",
+                forhome: "হোম",
+                forportal: "ব্যবহারকারী পোর্টাল",
+                foractivity: "চলমান কার্যক্রম"
+            }
+        };
+
+        const loadLanguage = (lang) => {
+            const translationsForLang = translations[lang];
+            document.getElementById('member1Name').innerText = translationsForLang.member1Name;
+            document.getElementById('member1Desc').innerText = translationsForLang.member1Desc;
+            document.getElementById('member2Name').innerText = translationsForLang.member2Name;
+            document.getElementById('member2Desc').innerText = translationsForLang.member2Desc;
+            document.getElementById('member3Name').innerText = translationsForLang.member3Name;
+            document.getElementById('member3Desc').innerText = translationsForLang.member3Desc;
+            document.getElementById('forus').innerText = translationsForLang.forus;
+            document.getElementById('forhome').innerText = translationsForLang.forhome;
+            document.getElementById('foractivity').innerText = translationsForLang.foractivity;
+            document.getElementById('forportal').innerText = translationsForLang.forportal;
+
+            // Save the selected language to local storage
+            localStorage.setItem('language', lang);
+        };
+
+        // Load saved language on page load
+        const savedLanguage = localStorage.getItem('language') || 'en'; // Default to English
+        loadLanguage(savedLanguage);
+    </script>
+</body>
+
+</html>
